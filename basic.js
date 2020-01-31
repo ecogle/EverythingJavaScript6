@@ -30,7 +30,7 @@ Car.prototype.showAnother = (function (){
 myCar.showCar();
 myCar.showAnother();
 
-//object creation
+//object creation using a function
 function Wheel(ccar){
     this.car = ccar; //property
     //method
@@ -41,3 +41,17 @@ function Wheel(ccar){
 
 var wheel = new Wheel(myCar);
 wheel.showCarModel();
+
+// ajax request
+function loadText(){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200)
+        {
+            document.getElementById("text").innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET","http://localhost:8080/ajax/text.txt",true);
+    xhttp.send();
+   
+}
