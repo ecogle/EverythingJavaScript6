@@ -51,7 +51,11 @@ function loadText(){
             document.getElementById("text").innerHTML = this.responseText;
         }
     };
-    xhttp.open("GET","http://localhost:8080/ajax/text.txt",true);
+    xhttp.open("GET","http://localhost:8080/EverythingJavaScript6/text.txt",true);
     xhttp.send();
    
+}
+
+function sayHi(val){
+	window.alert(val.value);
 }
